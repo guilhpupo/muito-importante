@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MUITO IMPORTANTE</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      main {
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: tomato;
+      }
+      div {
+        margin-top: 20px;
+      }
+      button {
+        margin-right: 10px;
+        padding: 10px;
+        width: 100px;
+        cursor: pointer;
+        background-color: white;
+        border-radius: 10px;
+        border: none;
+      }
+
+      iframe {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>DATEZINHO HOJE?</h1>
+        <div>
+          <button id="btn-yes" onclick="openYoutube()">Sim</button>
+          <button id="btn-no">Não</button>
+        </div>
+      </section>
+      <iframe
+        width="110"
+        height="200"
+        src="https://www.myinstants.com/instant/eita-gloria-30525/embed/"
+        frameborder="0"
+        scrolling="no"
+      ></iframe>
+    </main>
+    <script>
+      const element = document.getElementById("btn-no");
+      element.addEventListener("mouseenter", () => {
+        const x = Math.floor(Math.random() * window.innerWidth);
+        const y = Math.floor(Math.random() * window.innerHeight);
+        element.style.position = "absolute";
+        element.style.left = x + "px";
+        element.style.top = y + "px";
+      });
+
+      function openYoutube() {
+        const iframe = document.querySelector("iframe");
+        const section = document.querySelector("section");
+        iframe.style.display = "block";
+        section.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
